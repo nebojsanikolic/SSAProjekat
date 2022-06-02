@@ -6,7 +6,7 @@ class DAO {
 
 	// ADMIN
 	private $GETADMIN = "SELECT * FROM `admins` WHERE username = ? && password = ?;";
-	private $GETADMINBYID ="SELECT * FROM `admins`WHERE id = ?";
+	private $GETADMINBYID ="SELECT * FROM `admins` WHERE id = ?";
 	
 	//PARKING
 	private $GETPARKING = "SELECT * FROM `lot1`;";
@@ -45,7 +45,7 @@ class DAO {
 	}
 
 // PARKING
-	public function GetAllParkingById($id)
+	public function GetParkingById($id)
 	{
 		
 		$statement = $this->db->prepare($this->GETPARKINGBYID);

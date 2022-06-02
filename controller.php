@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD']="POST"){
             } 
     }
     elseif (isset($_POST['loginguest'])) {
-        echo "Guest";
+        include 'guest.php';
     }
     
 } elseif ($_SERVER['REQUEST_METHOD']=="GET"){
