@@ -23,12 +23,12 @@ if ($_SERVER['REQUEST_METHOD']="POST"){
                 }
                 else{
                     $loginstatus = false;
-                    include_once 'C:/xampp/htdocs/SSA/pocetna.php';
+                    include_once 'C:/xampp/htdocs/SSAProjekat/pocetna.php';
                 }
             }
             else{
                 $loginstatus = false;
-                include_once 'C:/xampp/htdocs/SSA/pocetna.php';
+                include_once 'C:/xampp/htdocs/SSAProjekat/pocetna.php';
 
             } 
     }

@@ -5,7 +5,7 @@ class DAO {
 	private $db;
 
 	// ADMIN
-	private $GETADMIN = "SELECT * FROM `admins` WHERE username = ? && password = ?;";
+	private $GETADMIN = "SELECT * FROM `admins` WHERE username = ? AND password = ?;";
 	private $GETADMINBYID ="SELECT * FROM `admins` WHERE id = ?";
 	
 	//PARKING
@@ -24,8 +24,8 @@ class DAO {
 	{
 		
 		$statement = $this->db->prepare($this->GETADMIN);
-		$statement->bindValue(1, $username, PDO::PARAM_INT);
-		$statement->bindValue(2, $password, PDO::PARAM_INT);
+		$statement->bindValue(1, $username);
+		$statement->bindValue(2, $password);
 		
 		$statement->execute();
 		
