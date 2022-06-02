@@ -3,6 +3,7 @@
     
     class lot{
         public $id;
+        public $name;
         public $MaxCap;
         public $Occupied;
     }
@@ -78,7 +79,7 @@
                                 <div class="badge my-auto d-block"> <span> '.$slobodna.'</span> </div>
                             </div>
                             <div class="mt-5">
-                                <h3 class="heading">Parking Name</h3>
+                                <h3 class="heading">'.$parkingLot["name"].'</h3>
                                 <div class="mt-5">
                                     <div class="progress">
                                         <div class="progress-bar" id="'.$id1.'"  role="progressbar" style="width:'.$procenat.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
