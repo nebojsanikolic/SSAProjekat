@@ -40,14 +40,9 @@
     <div class="navbar-collapse collapse justify-content-center order-2" id="collapsingNavbar">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Link <span class="sr-only">Home</span></a>
+                <a class="nav-link" href="pocetna.php" style="white-space: nowrap">Back to main page</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="//codeply.com">Codeply</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
+            
         </ul>
     </div>
     <span class="navbar-text small text-truncate mt-1 w-50 text-right order-1 order-md-last">Smart parking App</span>
@@ -95,6 +90,13 @@
                     }
                 ?>
             
+        </div>
+        <div class="row mt-5">
+                <div class="col text-center mt-5" >
+                    <img src="ftn.png" class="img-fluid mx-auto d-block" width="75px" alt="" style="opacity: 0.7; filter: grayscale(100);"> <br>
+                    <p style="opacity:0.5; font-size:14px">@FTN Čačak</p>
+                    <p style="opacity:0.3">Savremene softverske arhitekture <br> Milica Stevanić 32/2018 <br> Nebojša Nikolić 68/2018</p>
+                </div>
         </div>
     </div>
     <!-- JAVA -->

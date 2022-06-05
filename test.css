@@ -1,8 +1,6 @@
-body {
-    background-image: url("bg.jpg");
-    background-repeat: repeat;
+body{
+    background-color: #eee;
 }
-
 .red {color:red}
 .orange {color:orange}
 .green {color:green}
