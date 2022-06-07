@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+
 // var bar = parseInt($('.progress-bar').width());
 var i =2;
 while(document.getElementById(i)){
@@ -21,6 +23,7 @@ while(document.getElementById(i)){
         }
         i++;
         console.log(i);
+
 }
 
 

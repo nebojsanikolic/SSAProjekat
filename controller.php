@@ -36,12 +36,11 @@ if ($_SERVER['REQUEST_METHOD']="POST"){
         include 'guest.php';
     }
     
-} elseif ($_SERVER['REQUEST_METHOD']=="GET"){
-    //akcije za prikaz i brisanje
-    if ($action == 'akcijaGet1') {
-        //...
-    } elseif ($action == 'akcijaGet2'){
-        //...
+} elseif ($_SERVER['REQUEST_METHOD']="GET"){
+    if ($action == 'up') {
+        echo "uspesno";
+    } elseif ($action == 'down'){
+        var_dump("down");
     }elseif ($action == 'akcijaGet3'){
         //...
     }

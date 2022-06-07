@@ -24,9 +24,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="test.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- MAPA -->
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-    <title>Document</title>
+    <title>Parking App</title>
 </head>
 <body>
 
@@ -48,9 +57,14 @@
     <span class="navbar-text small text-truncate mt-1 w-50 text-right order-1 order-md-last">Smart parking App</span>
 </nav>
     <!-- PODACI -->
-    <div class="container">
+        <div class="container my-5 pl-3">
+            <button type="button" onclick="getLocation()" class="btn btn-primary">Find parking near you</button>
+        </div>
+        <p id="demo"></p>
+        <div id="mapmain" style="display:none; height: 400px;"></div>
+        <div class="container">
+
         <div class="row mt-5">
-            
                 <?php 
                     $parkingLot = new lot();
                     $id1='1';
@@ -74,7 +88,10 @@
                                 <div class="badge my-auto d-block"> <span> '.$slobodna.'</span> </div>
                             </div>
                             <div class="mt-5">
-                                <h3 class="heading">'.$parkingLot["name"].'</h3>
+                                <h3 id="name'.$id1.'" class="heading" >'.$parkingLot["name"].'</h3>
+                                <p style="font-size:10px; margin-bottom:0 rem" class="text-muted m-0" id="lat'.$id1.'" > '.$parkingLot["lat"].' </p>
+                                <p class="text-muted" id="lng'.$id1.'" style="font-size:10px; margin-bottom:0 rem"> '.$parkingLot["lng"].' </p>
+                                <div id="map'.$id1.'"></div>
                                 <div class="mt-5">
                                     <div class="progress">
                                         <div class="progress-bar" id="'.$id1.'"  role="progressbar" style="width:'.$procenat.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
@@ -100,7 +117,9 @@
         </div>
     </div>
     <!-- JAVA -->
+    <script type="text/javascript" src="getLoc.js"></script>
     <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="map.js"></script>
 </body>
 </html> 
 

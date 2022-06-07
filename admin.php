@@ -25,6 +25,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="test.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -57,10 +59,12 @@
                     while($dao->GetParkingById($id1)){
                         $parkingLot = $dao->GetParkingById($id1);
                         $id1=$id1+1;
+                        
                         $procenat = ($parkingLot["Occupied"]/$parkingLot["MaxCap"])*100;
 
-                        $card = '<div class="col-md-3 col-sm-6 col-xs-12  mt-2">
-                        <div class="card bg-dark style="width: 18rem;">
+                        $card = '
+                        <div class="col-md-3 col-sm-6 col-xs-12  mt-2">
+                        <div id="c'.$id1.'" class="card bg-dark style="width: 18rem;">
                         <div class="card-header" style="font-weight: bold; color:white">
                         '.$parkingLot["id"]. ' - '.$parkingLot["name"]. '
                         </div>
@@ -70,7 +74,9 @@
                             <div class="progress" style="border-radius:0rem; height:15px">
                             <div class="progress-bar" id="'.$id1.'" role="progressbar" style="border-radius: 0;width:'.$procenat.'%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <li class="list-group-item" style="font-weight: bold;"> <button type="button" class=" w-100 btn btn-outline-success"> Update</button>    </li>                 
+                            <li class="list-group-item">
+                            
+                            </li>
                             <li class="list-group-item" style="font-weight: bold;"><button type="button" class=" w-100 btn btn-outline-danger"> Delete</button>      </li>                   
                        
                                    
@@ -79,8 +85,8 @@
                                                
 
                         </div>
-
                         </div>
+                    
                         ';
 
                         echo $card;

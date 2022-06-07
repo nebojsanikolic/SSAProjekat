@@ -5,7 +5,7 @@ class DAO {
 	private $db;
 
 	// ADMIN
-	private $GETADMIN = "SELECT * FROM `admins` WHERE username = ? AND password = ?;";
+	private $GETADMIN = "SELECT * FROM `admins` WHERE username = ? AND userpassword = ?;";
 	private $GETADMINBYID ="SELECT * FROM `admins` WHERE id = ?";
 	
 	//PARKING

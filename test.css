@@ -5,6 +5,11 @@ body{
 .orange {color:orange}
 .green {color:green}
 
+#map2 { height: 180px; border-radius: 15px; }
+#map3 { height: 180px; border-radius: 15px; }
+#map4 { height: 180px; border-radius: 15px; }
+#map5 { height: 180px; border-radius: 15px; }
+
 .card {
     transition: box-shadow .3s;
     border: none;
@@ -13,6 +18,10 @@ body{
 }
 .card:hover{
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
+
+}
+.btn:hover{
+    box-shadow: 0 0 11px rgba(59, 121, 255, 0.5); 
 
 }
 .c-details span {
