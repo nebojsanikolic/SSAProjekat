@@ -10,8 +10,8 @@ class DAO {
 	
 	//PARKING
 	private $GETPARKING = "SELECT * FROM `lot1`;";
-	private $INSERTPARKING = "INSERT INTO `lot1` (`id`, `MaxCap`, `Occupied`) VALUES (?, ?, ?);";
 	private $GETPARKINGBYID = "SELECT * FROM `lot1` WHERE id=?;";
+	private $INSERTPARKING = "INSERT INTO `lot1`(`name`, `MaxCap`, `Occupied`, `lat`, `lng`) VALUES (?,?,?,?,?)";
 
 	// INSERT INTO `lot1` (`id`, `MaxCap`, `Occupied`) VALUES ('1', '75', '66')
 	
@@ -45,6 +45,20 @@ class DAO {
 	}
 
 // PARKING
+	public function insertParking($parkname, $parkmaxcap, $occupied, $parklat, $parklng)
+	{
+		
+		$statement = $this->db->prepare($this->INSERTPARKING);
+		$statement->bindValue(1, $parkname);
+		$statement->bindValue(2, $parkmaxcap);
+		$statement->bindValue(3, $occupied);
+
+		$statement->bindValue(4, $parklat);
+		$statement->bindValue(5, $parklng);
+		
+		$statement->execute();
+	}
+
 	public function GetParkingById($id)
 	{
 		
@@ -65,16 +79,6 @@ class DAO {
 		
 		$result = $statement->fetchAll();
 		return $result;
-	}
-	public function InsertParking($id, $MaxCap, $Occupied)
-	{
-		
-		$statement = $this->db->prepare($this->INSERTPARKING);
-		$statement->bindValue(1, $id);
-		$statement->bindValue(2, $MaxCap);
-		$statement->bindValue(3, $Occupied);
-		
-		$statement->execute();
 	}
 
 

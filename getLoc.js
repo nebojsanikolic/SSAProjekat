@@ -20,7 +20,7 @@
             }).addTo(map);
             L.marker([lat, lng]).addTo(map)
             // DODAVANJE OSTALIH PARKINGA NA VELIKU MAPU
-            for(i=2;i<5 ;i++){
+            for(i=2;i<20 ;i++){
                 var a = document.getElementById('lat'+i).innerHTML;
                 var b = document.getElementById('lng'+i).innerHTML;
 

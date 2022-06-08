@@ -58,7 +58,7 @@
 </nav>
     <!-- PODACI -->
         <div class="container my-5 pl-3">
-            <button type="button" onclick="getLocation()" class="btn btn-primary">Find parking near you</button>
+            <button type="button" onclick="getLocation()" class="btn btn-primary mx-auto d-block" style="background-color: #0224e2;border-radius: 10px; font-weight:600"><i class="bx bx-map-pin mx-auto d-block" style="color: white"></i>Find parking <br>near you</button>
         </div>
         <p id="demo"></p>
         <div id="mapmain" style="display:none; height: 400px;"></div>
@@ -80,17 +80,17 @@
                         <div class="card p-3 mb-2">
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex flex-row align-items-center">
-                                    <div class="icon"><i class="bx bxs-parking"></i></i> </div>
+                                    <div class="icon"><i class="bx bxs-parking"></i></div>
                                     <div class="ms-2 c-details">
                                         <h6 class="mb-0 mx-3 text-muted">Parking ID - '.$parkingLot["id"].'</h6> 
                                     </div>
                                 </div>
                                 <div class="badge my-auto d-block"> <span> '.$slobodna.'</span> </div>
                             </div>
-                            <div class="mt-5">
-                                <h3 id="name'.$id1.'" class="heading" >'.$parkingLot["name"].'</h3>
-                                <p style="font-size:10px; margin-bottom:0 rem" class="text-muted m-0" id="lat'.$id1.'" > '.$parkingLot["lat"].' </p>
-                                <p class="text-muted" id="lng'.$id1.'" style="font-size:10px; margin-bottom:0 rem"> '.$parkingLot["lng"].' </p>
+                            <div class="mt-3">
+                                <h3 id="name'.$id1.'" class="heading" style="font-weight:700" >'.$parkingLot["name"].'</h3>
+                                <p class="my-0 py-0" id="lat'.$id1.'" style="font-size:10px; color: lightblue;" > '.$parkingLot["lat"].' </p>
+                                <p id="lng'.$id1.'" style="font-size:10px; margin-bottom:0 rem; color: lightblue;"> '.$parkingLot["lng"].' </p>
                                 <div id="map'.$id1.'"></div>
                                 <div class="mt-5">
                                     <div class="progress">

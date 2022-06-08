@@ -11,7 +11,28 @@ $action = isset($_REQUEST["action"])? $_REQUEST["action"] : ""; //provera da li 
 
 if ($_SERVER['REQUEST_METHOD']=="POST"){
 
-    var_dump("33");
+    $parkname = isset($_POST["parkingname"])? test_input($_POST["parkingname"]):"";
+    $parklat = isset($_POST["parkinglat"])? test_input($_POST["parkinglat"]):"";
+    $parklng = isset($_POST["parkinglng"])? test_input($_POST["parkinglng"]):"";
+    $occupied = isset($_POST["occupied"])? test_input($_POST["occupied"]):"";
+    $parkmaxcap = isset($_POST["parkingmaxcap"])? test_input($_POST["parkingmaxcap"]):"";
+    if (isset($_POST['insert'])) {
+        if(!empty($parkname) && !empty($parklat) && !empty($parklng) && !empty($parkmaxcap) && !empty($occupied)){
+                $insert = $dao->insertParking($parkname, $parkmaxcap, $occupied,$parklat, $parklng);
+                if($insert == true){
+                    $loginstatus = false;
+                    include_once 'admin.php';
+                }
+                else{
+                    include_once 'C:/xampp/htdocs/SSAProjekat/pocetna.php';
+                }
+            }
+            else{
+                $loginstatus = false;
+                include_once 'C:/xampp/htdocs/SSAProjekat/pocetna.php';
+
+            } 
+    }
     
 } elseif ($_SERVER['REQUEST_METHOD']=="GET"){
     $action = isset($_GET['action']) ? $_GET['action'] : NULL;  
